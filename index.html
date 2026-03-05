@@ -147,7 +147,7 @@
             font-size: 21px;
             color: #86868b;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         /* 가로 스크롤 컨테이너 */
@@ -185,88 +185,10 @@
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
         }
 
-        .video-placeholder {
-            width: 100%;
-            height: 225px;
-            background: #1d1d1f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 18px;
-        }
-
         .video-card iframe {
             width: 100%;
             height: 225px;
             border: none;
-        }
-
-        .video-card-content {
-            padding: 20px;
-        }
-
-        .video-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .video-card p {
-            font-size: 14px;
-            color: #86868b;
-        }
-
-        /* 4컷 만화 섹션 */
-        .comics {
-            background: #fff;
-        }
-
-        .comic-card {
-            width: 300px;
-            background: #f5f5f7;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-        }
-
-        .comic-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .comic-placeholder {
-            width: 100%;
-            height: 400px;
-            background: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #86868b;
-            font-size: 16px;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .comic-card img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .comic-card-content {
-            padding: 20px;
-        }
-
-        .comic-card h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .comic-card p {
-            font-size: 14px;
-            color: #86868b;
         }
 
         /* 스크롤 힌트 */
@@ -274,36 +196,87 @@
             text-align: center;
             color: #86868b;
             font-size: 14px;
-            margin-top: 20px;
+            margin-top: 16px;
         }
 
-        /* 업로드 가이드 */
-        .upload-guide {
+        /* 4컷 만화 섹션 */
+        .comics {
             background: #fff;
-            border: 2px dashed #FF6B35;
-            border-radius: 16px;
-            padding: 30px;
-            margin: 40px 20px;
+        }
+
+        /* 시즌 드롭다운 */
+        .season-selector {
+            max-width: 400px;
+            margin: 0 auto 40px;
+        }
+
+        .season-selector label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 12px;
             text-align: center;
         }
 
-        .upload-guide h4 {
+        .season-dropdown {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #FF6B35;
+            border-radius: 12px;
             font-size: 18px;
+            font-weight: 600;
             color: #FF6B35;
-            margin-bottom: 12px;
+            background: #fff;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 50px;
         }
 
-        .upload-guide p {
-            font-size: 14px;
-            color: #86868b;
-            line-height: 1.6;
+        .season-dropdown:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.2);
         }
 
-        .upload-guide code {
+        /* 시즌 콘텐츠 */
+        .season-content {
+            display: none;
+        }
+
+        .season-content.active {
+            display: block;
+        }
+
+        .comic-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .comic-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .comic-card {
+            flex: 0 0 auto;
+            width: 280px;
             background: #f5f5f7;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-family: monospace;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .comic-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
         }
 
         /* 토큰 섹션 */
@@ -389,7 +362,7 @@
             }
 
             .comic-card {
-                width: 260px;
+                width: 240px;
             }
 
             nav ul {
@@ -411,7 +384,6 @@
 
     <!-- 히어로: FoxDegen 캐릭터 -->
     <section class="hero">
-        <!-- 여기에 FoxDegen 캐릭터 이미지 URL 입력 -->
         <img src="https://via.placeholder.com/200x200/FF6B35/FFFFFF?text=FoxDegen" alt="FoxDegen" class="hero-image">
         
         <h1>FoxDegen</h1>
@@ -423,146 +395,113 @@
         </div>
     </section>
 
-    <!-- 뮤직비디오 섹션 (먼저) -->
+    <!-- 뮤직비디오 섹션 -->
     <section id="videos" class="videos">
         <h2 class="section-title">Music Videos</h2>
         <p class="section-subtitle">Watch the journey unfold.</p>
         
         <div class="scroll-container">
-            <!-- 뮤직비디오 1: Foxes -->
+            <!-- 영상 1 -->
             <div class="scroll-item">
                 <div class="video-card">
-                    <!-- YouTube URL로 교체: src="https://www.youtube.com/embed/VIDEO_ID" -->
-                    <div class="video-placeholder">
-                        Foxes MV<br>(YouTube URL 입력)
-                    </div>
-                    <div class="video-card-content">
-                        <h3>Foxes</h3>
-                        <p>Debut single. Six foxes become one.</p>
-                    </div>
+                    <iframe src="https://www.youtube.com/embed/63Kg1p39CVk" allowfullscreen></iframe>
                 </div>
             </div>
             
-            <!-- 뮤직비디오 2: 띵가띵가 -->
+            <!-- 영상 2 -->
             <div class="scroll-item">
                 <div class="video-card">
-                    <div class="video-placeholder">
-                        띵가띵가 MV<br>(YouTube URL 입력)
-                    </div>
-                    <div class="video-card-content">
-                        <h3>Fox World 띵가띵가</h3>
-                        <p>The viral hit that started it all.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 뮤직비디오 3: 추가 -->
-            <div class="scroll-item">
-                <div class="video-card">
-                    <div class="video-placeholder">
-                        New MV<br>(YouTube URL 입력)
-                    </div>
-                    <div class="video-card-content">
-                        <h3>Coming Soon</h3>
-                        <p>Next chapter of Fox World.</p>
-                    </div>
+                    <iframe src="https://www.youtube.com/embed/ALmeUqS1CHw" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
         
         <p class="scroll-hint">← Swipe to see more →</p>
-
-        <!-- 업로드 가이드 -->
-        <div class="upload-guide">
-            <h4>🎵 뮤직비디오 업로드 방법</h4>
-            <p>
-                1. YouTube에 영상 업로드<br>
-                2. 영상 URL에서 ID 복사: <code>youtube.com/watch?v=<b>ABC123</b></code><br>
-                3. 코드에서 <code>VIDEO_ID</code> 부분을 실제 ID로 교체<br>
-                예: <code>src="https://www.youtube.com/embed/ABC123"</code>
-            </p>
-        </div>
     </section>
 
-    <!-- 4컷 만화 섹션 (모든 시즌) -->
+    <!-- 4컷 만화 섹션 -->
     <section id="comics" class="comics">
         <h2 class="section-title">Story Comics</h2>
-        <p class="section-subtitle">EP1-40. All seasons. Swipe to explore.</p>
-        
-        <div class="scroll-container">
-            <!-- 시즌 1: EP1-10 -->
-            <div class="scroll-item">
-                <div class="comic-card">
-                    <div class="comic-placeholder">
-                        EP1-10<br>Season 1<br>(이미지 URL 입력)
-                    </div>
-                    <div class="comic-card-content">
-                        <h3>Season 1: Arrival</h3>
-                        <p>The mystery begins. FoxDegen enters the digital forest.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="scroll-item">
-                <div class="comic-card">
-                    <div class="comic-placeholder">
-                        EP11-20<br>Season 2<br>(이미지 URL 입력)
-                    </div>
-                    <div class="comic-card-content">
-                        <h3>Season 2: AI Partnership</h3>
-                        <p>Meeting AURA. Growth through technology and trust.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="scroll-item">
-                <div class="comic-card">
-                    <div class="comic-placeholder">
-                        EP21-30<br>Season 3<br>(이미지 URL 입력)
-                    </div>
-                    <div class="comic-card-content">
-                        <h3>Season 3: Global Fox World</h3>
-                        <p>Six forests. Six foxes. One world map.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="scroll-item">
-                <div class="comic-card">
-                    <div class="comic-placeholder">
-                        EP31-35<br>Season 4<br>(이미지 URL 입력)
-                    </div>
-                    <div class="comic-card-content">
-                        <h3>Season 4: Idol Debut - Part 1</h3>
-                        <p>Audition, practice, conflict. The journey to becoming one.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="scroll-item">
-                <div class="comic-card">
-                    <div class="comic-placeholder">
-                        EP36-40<br>Season 4<br>(이미지 URL 입력)
-                    </div>
-                    <div class="comic-card-content">
-                        <h3>Season 4: Idol Debut - Part 2</h3>
-                        <p>Empathy. Unity. Fox World takes the stage.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <p class="scroll-hint">← Swipe to see all seasons →</p>
+        <p class="section-subtitle">Select a season to explore.</p>
 
-        <!-- 업로드 가이드 -->
-        <div class="upload-guide">
-            <h4>🎨 4컷 만화 업로드 방법</h4>
-            <p>
-                1. 이미지 호스팅 (Imgur, Cloudinary, GitHub 등)에 업로드<br>
-                2. 이미지 URL 복사<br>
-                3. 코드에서 <code>src="..."</code> 부분을 실제 URL로 교체<br>
-                예: <code>&lt;img src="https://i.imgur.com/ABC123.jpg"&gt;</code>
-            </p>
+        <!-- 시즌 선택 드롭다운 -->
+        <div class="season-selector">
+            <label for="seasonSelect">시즌 선택</label>
+            <select id="seasonSelect" class="season-dropdown" onchange="changeSeason()">
+                <option value="">시즌을 선택하세요</option>
+                <option value="season1">Season 1: Arrival (EP1-10)</option>
+                <option value="season2">Season 2: AI Partnership (EP11-20)</option>
+                <option value="season3">Season 3: Global Fox World (EP21-30)</option>
+                <option value="season4">Season 4: Idol Debut (EP31-40)</option>
+            </select>
+        </div>
+
+        <!-- 시즌 1 -->
+        <div id="season1" class="season-content">
+            <div class="comic-grid">
+                <div class="comic-card"><img src="" alt="EP1"></div>
+                <div class="comic-card"><img src="" alt="EP2"></div>
+                <div class="comic-card"><img src="" alt="EP3"></div>
+                <div class="comic-card"><img src="" alt="EP4"></div>
+                <div class="comic-card"><img src="" alt="EP5"></div>
+                <div class="comic-card"><img src="" alt="EP6"></div>
+                <div class="comic-card"><img src="" alt="EP7"></div>
+                <div class="comic-card"><img src="" alt="EP8"></div>
+                <div class="comic-card"><img src="" alt="EP9"></div>
+                <div class="comic-card"><img src="" alt="EP10"></div>
+            </div>
+            <p class="scroll-hint">← Swipe to see all episodes →</p>
+        </div>
+
+        <!-- 시즌 2 -->
+        <div id="season2" class="season-content">
+            <div class="comic-grid">
+                <div class="comic-card"><img src="" alt="EP11"></div>
+                <div class="comic-card"><img src="" alt="EP12"></div>
+                <div class="comic-card"><img src="" alt="EP13"></div>
+                <div class="comic-card"><img src="" alt="EP14"></div>
+                <div class="comic-card"><img src="" alt="EP15"></div>
+                <div class="comic-card"><img src="" alt="EP16"></div>
+                <div class="comic-card"><img src="" alt="EP17"></div>
+                <div class="comic-card"><img src="" alt="EP18"></div>
+                <div class="comic-card"><img src="" alt="EP19"></div>
+                <div class="comic-card"><img src="" alt="EP20"></div>
+            </div>
+            <p class="scroll-hint">← Swipe to see all episodes →</p>
+        </div>
+
+        <!-- 시즌 3 -->
+        <div id="season3" class="season-content">
+            <div class="comic-grid">
+                <div class="comic-card"><img src="" alt="EP21"></div>
+                <div class="comic-card"><img src="" alt="EP22"></div>
+                <div class="comic-card"><img src="" alt="EP23"></div>
+                <div class="comic-card"><img src="" alt="EP24"></div>
+                <div class="comic-card"><img src="" alt="EP25"></div>
+                <div class="comic-card"><img src="" alt="EP26"></div>
+                <div class="comic-card"><img src="" alt="EP27"></div>
+                <div class="comic-card"><img src="" alt="EP28"></div>
+                <div class="comic-card"><img src="" alt="EP29"></div>
+                <div class="comic-card"><img src="" alt="EP30"></div>
+            </div>
+            <p class="scroll-hint">← Swipe to see all episodes →</p>
+        </div>
+
+        <!-- 시즌 4 -->
+        <div id="season4" class="season-content">
+            <div class="comic-grid">
+                <div class="comic-card"><img src="" alt="EP31"></div>
+                <div class="comic-card"><img src="" alt="EP32"></div>
+                <div class="comic-card"><img src="" alt="EP33"></div>
+                <div class="comic-card"><img src="" alt="EP34"></div>
+                <div class="comic-card"><img src="" alt="EP35"></div>
+                <div class="comic-card"><img src="" alt="EP36"></div>
+                <div class="comic-card"><img src="" alt="EP37"></div>
+                <div class="comic-card"><img src="" alt="EP38"></div>
+                <div class="comic-card"><img src="" alt="EP39"></div>
+                <div class="comic-card"><img src="" alt="EP40"></div>
+            </div>
+            <p class="scroll-hint">← Swipe to see all episodes →</p>
         </div>
     </section>
 
@@ -601,5 +540,20 @@
         </div>
         <p>© 2024 FoxDegen. Built on Base.</p>
     </footer>
+
+    <script>
+        function changeSeason() {
+            const select = document.getElementById('seasonSelect');
+            const selectedSeason = select.value;
+            
+            document.querySelectorAll('.season-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            if (selectedSeason) {
+                document.getElementById(selectedSeason).classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
