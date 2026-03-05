@@ -65,8 +65,17 @@
             background: linear-gradient(180deg, #f5f5f7 0%, #fff 100%);
         }
 
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
+        }
+
         .hero h1 {
-            font-size: 96px;
+            font-size: 72px;
             font-weight: 700;
             letter-spacing: -0.015em;
             margin-bottom: 20px;
@@ -76,7 +85,7 @@
         }
 
         .hero p {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 400;
             color: #86868b;
             margin-bottom: 40px;
@@ -121,8 +130,8 @@
 
         /* 섹션 공통 */
         section {
-            padding: 120px 20px;
-            max-width: 1024px;
+            padding: 100px 20px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -130,47 +139,178 @@
             font-size: 48px;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
             letter-spacing: -0.015em;
         }
 
-        /* 스토리 섹션 */
-        .story {
+        .section-subtitle {
+            font-size: 21px;
+            color: #86868b;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* 가로 스크롤 컨테이너 */
+        .scroll-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 20px 0;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-item {
+            display: inline-block;
+            vertical-align: top;
+            white-space: normal;
+            margin-right: 20px;
+        }
+
+        /* 뮤직비디오 섹션 */
+        .videos {
             background: #f5f5f7;
         }
 
-        .story-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .story-card {
+        .video-card {
+            width: 400px;
             background: #fff;
             border-radius: 20px;
-            padding: 40px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 225px;
+            background: #1d1d1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 225px;
+            border: none;
+        }
+
+        .video-card-content {
+            padding: 20px;
+        }
+
+        .video-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .video-card p {
+            font-size: 14px;
+            color: #86868b;
+        }
+
+        /* 4컷 만화 섹션 */
+        .comics {
+            background: #fff;
+        }
+
+        .comic-card {
+            width: 300px;
+            background: #f5f5f7;
+            border-radius: 20px;
+            overflow: hidden;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s;
         }
 
-        .story-card:hover {
+        .comic-card:hover {
             transform: translateY(-4px);
         }
 
-        .story-card h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #FF6B35;
+        .comic-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #86868b;
+            font-size: 16px;
+            text-align: center;
+            padding: 20px;
         }
 
-        .story-card p {
-            font-size: 17px;
+        .comic-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .comic-card-content {
+            padding: 20px;
+        }
+
+        .comic-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .comic-card p {
+            font-size: 14px;
             color: #86868b;
-            line-height: 1.5;
+        }
+
+        /* 스크롤 힌트 */
+        .scroll-hint {
+            text-align: center;
+            color: #86868b;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* 업로드 가이드 */
+        .upload-guide {
+            background: #fff;
+            border: 2px dashed #FF6B35;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 20px;
+            text-align: center;
+        }
+
+        .upload-guide h4 {
+            font-size: 18px;
+            color: #FF6B35;
+            margin-bottom: 12px;
+        }
+
+        .upload-guide p {
+            font-size: 14px;
+            color: #86868b;
+            line-height: 1.6;
+        }
+
+        .upload-guide code {
+            background: #f5f5f7;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
         }
 
         /* 토큰 섹션 */
+        .token {
+            background: #f5f5f7;
+        }
+
         .token-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -179,7 +319,7 @@
         }
 
         .token-card {
-            background: #f5f5f7;
+            background: #fff;
             border-radius: 16px;
             padding: 30px;
             text-align: center;
@@ -198,40 +338,6 @@
             font-weight: 500;
             color: #1d1d1f;
             word-break: break-all;
-        }
-
-        /* 캐릭터 섹션 */
-        .characters {
-            background: #f5f5f7;
-        }
-
-        .character-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .character {
-            padding: 20px;
-        }
-
-        .character-color {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 16px;
-        }
-
-        .character h4 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .character p {
-            font-size: 14px;
-            color: #86868b;
         }
 
         /* 푸터 */
@@ -267,15 +373,23 @@
         /* 반응형 */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 56px;
+                font-size: 48px;
             }
 
             .hero p {
-                font-size: 21px;
+                font-size: 18px;
             }
 
             .section-title {
                 font-size: 32px;
+            }
+
+            .video-card {
+                width: 320px;
+            }
+
+            .comic-card {
+                width: 260px;
             }
 
             nav ul {
@@ -289,49 +403,174 @@
     <!-- 네비게이션 -->
     <nav>
         <ul>
-            <li><a href="#story">Story</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#comics">Comics</a></li>
             <li><a href="#token">Token</a></li>
-            <li><a href="#characters">Characters</a></li>
-            <li><a href="#community">Community</a></li>
         </ul>
     </nav>
 
-    <!-- 히어로 -->
+    <!-- 히어로: FoxDegen 캐릭터 -->
     <section class="hero">
+        <!-- 여기에 FoxDegen 캐릭터 이미지 URL 입력 -->
+        <img src="https://via.placeholder.com/200x200/FF6B35/FFFFFF?text=FoxDegen" alt="FoxDegen" class="hero-image">
+        
         <h1>FoxDegen</h1>
         <p>Story-driven Meme on Base.<br>Six foxes. One world. Infinite empathy.</p>
+        
         <div class="cta-buttons">
             <a href="https://app.uniswap.org/swap?outputCurrency=0x382FC747a96fB2DBD02a4a3F33F7675Ca9Ac23D6&chain=base" class="btn btn-primary" target="_blank">Buy Token</a>
             <a href="https://discord.gg/t7T2mRRH" class="btn btn-secondary" target="_blank">Join Community</a>
         </div>
     </section>
 
-    <!-- 스토리 -->
-    <section id="story" class="story">
-        <h2 class="section-title">A Story Unlike Any Other</h2>
-        <div class="story-grid">
-            <div class="story-card">
-                <h3>Season 1</h3>
-                <p>The arrival. The mystery. The first steps into a digital forest where footprints tell stories and every encounter changes everything.</p>
+    <!-- 뮤직비디오 섹션 (먼저) -->
+    <section id="videos" class="videos">
+        <h2 class="section-title">Music Videos</h2>
+        <p class="section-subtitle">Watch the journey unfold.</p>
+        
+        <div class="scroll-container">
+            <!-- 뮤직비디오 1: Foxes -->
+            <div class="scroll-item">
+                <div class="video-card">
+                    <!-- YouTube URL로 교체: src="https://www.youtube.com/embed/VIDEO_ID" -->
+                    <div class="video-placeholder">
+                        Foxes MV<br>(YouTube URL 입력)
+                    </div>
+                    <div class="video-card-content">
+                        <h3>Foxes</h3>
+                        <p>Debut single. Six foxes become one.</p>
+                    </div>
+                </div>
             </div>
-            <div class="story-card">
-                <h3>Season 2</h3>
-                <p>AI partnership. Growth. Trust built through shared challenges and the discovery that technology and heart can coexist.</p>
+            
+            <!-- 뮤직비디오 2: 띵가띵가 -->
+            <div class="scroll-item">
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        띵가띵가 MV<br>(YouTube URL 입력)
+                    </div>
+                    <div class="video-card-content">
+                        <h3>Fox World 띵가띵가</h3>
+                        <p>The viral hit that started it all.</p>
+                    </div>
+                </div>
             </div>
-            <div class="story-card">
-                <h3>Season 3</h3>
-                <p>Global expansion. Six forests. Six cultures. One map shaped like a fox's face, connecting worlds previously apart.</p>
+            
+            <!-- 뮤직비디오 3: 추가 -->
+            <div class="scroll-item">
+                <div class="video-card">
+                    <div class="video-placeholder">
+                        New MV<br>(YouTube URL 입력)
+                    </div>
+                    <div class="video-card-content">
+                        <h3>Coming Soon</h3>
+                        <p>Next chapter of Fox World.</p>
+                    </div>
+                </div>
             </div>
-            <div class="story-card">
-                <h3>Season 4</h3>
-                <p>Idol debut. Six voices. One song. From conflict to empathy, from different to united. This is Fox World.</p>
+        </div>
+        
+        <p class="scroll-hint">← Swipe to see more →</p>
+
+        <!-- 업로드 가이드 -->
+        <div class="upload-guide">
+            <h4>🎵 뮤직비디오 업로드 방법</h4>
+            <p>
+                1. YouTube에 영상 업로드<br>
+                2. 영상 URL에서 ID 복사: <code>youtube.com/watch?v=<b>ABC123</b></code><br>
+                3. 코드에서 <code>VIDEO_ID</code> 부분을 실제 ID로 교체<br>
+                예: <code>src="https://www.youtube.com/embed/ABC123"</code>
+            </p>
+        </div>
+    </section>
+
+    <!-- 4컷 만화 섹션 (모든 시즌) -->
+    <section id="comics" class="comics">
+        <h2 class="section-title">Story Comics</h2>
+        <p class="section-subtitle">EP1-40. All seasons. Swipe to explore.</p>
+        
+        <div class="scroll-container">
+            <!-- 시즌 1: EP1-10 -->
+            <div class="scroll-item">
+                <div class="comic-card">
+                    <div class="comic-placeholder">
+                        EP1-10<br>Season 1<br>(이미지 URL 입력)
+                    </div>
+                    <div class="comic-card-content">
+                        <h3>Season 1: Arrival</h3>
+                        <p>The mystery begins. FoxDegen enters the digital forest.</p>
+                    </div>
+                </div>
             </div>
+            
+            <div class="scroll-item">
+                <div class="comic-card">
+                    <div class="comic-placeholder">
+                        EP11-20<br>Season 2<br>(이미지 URL 입력)
+                    </div>
+                    <div class="comic-card-content">
+                        <h3>Season 2: AI Partnership</h3>
+                        <p>Meeting AURA. Growth through technology and trust.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-item">
+                <div class="comic-card">
+                    <div class="comic-placeholder">
+                        EP21-30<br>Season 3<br>(이미지 URL 입력)
+                    </div>
+                    <div class="comic-card-content">
+                        <h3>Season 3: Global Fox World</h3>
+                        <p>Six forests. Six foxes. One world map.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-item">
+                <div class="comic-card">
+                    <div class="comic-placeholder">
+                        EP31-35<br>Season 4<br>(이미지 URL 입력)
+                    </div>
+                    <div class="comic-card-content">
+                        <h3>Season 4: Idol Debut - Part 1</h3>
+                        <p>Audition, practice, conflict. The journey to becoming one.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-item">
+                <div class="comic-card">
+                    <div class="comic-placeholder">
+                        EP36-40<br>Season 4<br>(이미지 URL 입력)
+                    </div>
+                    <div class="comic-card-content">
+                        <h3>Season 4: Idol Debut - Part 2</h3>
+                        <p>Empathy. Unity. Fox World takes the stage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="scroll-hint">← Swipe to see all seasons →</p>
+
+        <!-- 업로드 가이드 -->
+        <div class="upload-guide">
+            <h4>🎨 4컷 만화 업로드 방법</h4>
+            <p>
+                1. 이미지 호스팅 (Imgur, Cloudinary, GitHub 등)에 업로드<br>
+                2. 이미지 URL 복사<br>
+                3. 코드에서 <code>src="..."</code> 부분을 실제 URL로 교체<br>
+                예: <code>&lt;img src="https://i.imgur.com/ABC123.jpg"&gt;</code>
+            </p>
         </div>
     </section>
 
     <!-- 토큰 정보 -->
-    <section id="token">
+    <section id="token" class="token">
         <h2 class="section-title">210424 Token</h2>
+        <p class="section-subtitle">Built on Base. Powered by community.</p>
+        
         <div class="token-info">
             <div class="token-card">
                 <h4>Contract Address</h4>
@@ -352,45 +591,8 @@
         </div>
     </section>
 
-    <!-- 캐릭터 -->
-    <section id="characters" class="characters">
-        <h2 class="section-title">Meet the Foxes</h2>
-        <div class="character-grid">
-            <div class="character">
-                <div class="character-color" style="background: linear-gradient(135deg, #FF6B35, #FF8E53);"></div>
-                <h4>FoxDegen</h4>
-                <p>Leader. Detective. The one who brings them together.</p>
-            </div>
-            <div class="character">
-                <div class="character-color" style="background: linear-gradient(135deg, #FFFFFF, #4A90E2);"></div>
-                <h4>Snow</h4>
-                <p>Elegant. Cold. Voice that freezes time.</p>
-            </div>
-            <div class="character">
-                <div class="character-color" style="background: linear-gradient(135deg, #4CAF50, #8BC34A);"></div>
-                <h4>Leaf</h4>
-                <p>Natural. Free. Movement like wind through trees.</p>
-            </div>
-            <div class="character">
-                <div class="character-color" style="background: linear-gradient(135deg, #9C27B0, #E1BEE7);"></div>
-                <h4>Star</h4>
-                <p>Mysterious. Purple. Eyes that hold galaxies.</p>
-            </div>
-            <div class="character">
-                <div class="character-color" style="background: linear-gradient(135deg, #FF5722, #FF9800);"></div>
-                <h4>Sunny</h4>
-                <p>Passionate. Fire. Energy that never fades.</p>
-            </div>
-            <div class="character">
-                <div class="character-color" style="background: linear-gradient(135deg, #FFD700, #FFA000);"></div>
-                <h4>Gold</h4>
-                <p>Bright. Young. The future shining golden.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- 푸터 -->
-    <footer id="community">
+    <footer>
         <div class="social-links">
             <a href="https://discord.gg/t7T2mRRH" target="_blank">Discord</a>
             <a href="https://x.com/foxdegen_" target="_blank">X</a>
